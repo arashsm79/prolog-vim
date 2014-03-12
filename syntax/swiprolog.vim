@@ -18,18 +18,22 @@ syn keyword swiprologDirective use_module ensure_loaded reexport module
 
 syn match   swiprologOperator "|\|#\\\?/\\\|#\\\?==>\|#\\\?<==>\|#=\?<#\?\|#\\\?=#\?\|##\|#>=\?#\?\|#\\\?\\/\?"
 
-" syn match   swiprologClauseHead  "^\(\l\w*\|'.*'\)\s*\((.*)\)\?\s*\(:-\|\.\)"
+syn match   swiprologClauseHead  "^\(\l\w*\|'.*'\)\s*\((.*)\)\?\s*\(:-\|\.\)"
 
-syn keyword swiprologTodo  contained TODO FIXME XXX
-syn match   swiprologComment  "%.*" contains=swiprologTodo
-syn region  swiprologComment   start="/\*" end="\*/" contains=swiprologTodo
+syn match   swiprologPlDoc     contained "\s@\w*"
+syn keyword swiprologTodo      contained TODO FIXME XXX
+syn match   swiprologComment  "%.*" contains=swiprologTodo,swiprologPlDoc
+syn region  swiprologComment   start="/\*" end="\*/" contains=swiprologTodo,swiprologPlDoc
 
-hi def link swiprologComment  Comment
-hi def link swiprologTodo     Todo
-hi def link swiprologKeyword  Special
-hi def link swiprologDirective Type
-hi def link swiprologOperator SpecialChar
-hi def link prologClauseHead Function
+hi def link swiprologComment    Comment
+hi def link swiprologTodo       Todo
+hi def link swiprologKeyword    Special
+hi def link swiprologDirective  Type
+hi def link swiprologPlDoc      Type
+hi def link swiprologOperator   SpecialChar
+syn clear prologClauseHead
+hi! def link prologClauseHead   Normal
+hi def link swiprologClauseHead Function
 
 let b:current_syntax = "swiprolog"
 
