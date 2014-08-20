@@ -5,7 +5,7 @@
 
 " setlocal mp=tclp\ --prolog\ gprolog\ %
 " setlocal mp=gplc\ %
-setlocal efm=%*[^\ ]\ including\ %f:%l%m,%f:%l%m(char:%c),%f:%l:%m,%f:%l-%.%#:%m,!\ Error\ in\ \"%f\"\\,\ line\ %l\ :\ %m
+setlocal efm=%*[^\ ]\ including\ %f:%l%m,%f:%l%m(char:%c),%f:%l:%m,%f:%l-%*\\d:%m,!\ Error\ in\ \"%f\"\\,\ line\ %l\ :\ %m
 " make
 nnoremap <buffer> <LocalLeader>m :make\|cw 5\|cc<CR><CR>
 " execute
