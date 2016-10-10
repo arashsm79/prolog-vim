@@ -16,3 +16,9 @@ function! SWIprolog_Compile()
    exe "make\|cw 5\|cc"
    exe "setlocal mp=" . escape(b:old_mp,' ')
 endfunction
+
+let g:neomake_swiprolog_swipl_maker = {
+         \ 'errorformat': '%t%*[^:]:\ %f:%l:%c:\ %m',
+         \ 'args':  ['-s', '%:p', '-q', '-t', 'halt'],
+         \ }
+let g:neomake_swiprolog_enabled_makers = ['swipl']
