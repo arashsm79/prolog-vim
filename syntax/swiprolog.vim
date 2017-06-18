@@ -7,7 +7,7 @@
 runtime syntax/prolog.vim
 
 " add missing ISO
-syn keyword prologKeyword abs atan ceiling cos end_of_file error lenght
+syn keyword prologKeyword abs atan ceiling cos end_of_file error length
 syn keyword prologKeyword exp floor log mod rem sign sin sqrt truncate
 syn keyword prologKeyword float_fractional_part float_integer_part
 
