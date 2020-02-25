@@ -9,7 +9,7 @@ call ale#Set('swiprolog_lspserver_config', {})
 call ale#linter#Define('swiprolog', {
          \   'name': 'lspserver',
          \   'lsp': 'stdio',
-         \   'command': 'swipl -g "use_module(library(lsp_server))." -g "lsp_server:main" -t "halt"',
+         \   'command': 'swipl -g "use_module(library(lsp_server))." -g "lsp_server:main" -t "halt" -- stdio',
          \   'executable': {b -> ale#Var(b, 'swiprolog_lspserver_executable')},
          \   'lsp_config': {b -> ale#Var(b, 'swiprolog_lspserver_config')},
          \})
