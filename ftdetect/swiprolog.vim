@@ -1,5 +1,5 @@
 " forget about perl and IDL
-au! BufNewFile,BufRead *.pl,*.pro
+" au! BufNewFile,BufRead *.pl,*.pro
 " on new .pl files choose prolog
 au BufNewFile *.pl,*.pro,*.plt setf swiprolog
 " on others, try to check
